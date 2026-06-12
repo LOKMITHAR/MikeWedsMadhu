@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Mike & Madhu — 05.07.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+  <!-- Favicons: place favicon files in assets/ (favicon.ico, favicon-16.png, favicon-32.png, apple-touch-icon.png, safari-pinned-tab.svg, site.webmanifest) -->
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#c9a96e" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+  <meta name="msapplication-TileColor" content="#2e4f6e" />
+  <meta name="theme-color" content="#f7f4ef" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:     #8fa7c0;
+      --blue-mid: #6b8bab;
+      --blue-deep:#2e4f6e;
+      --cream:    #f7f4ef;
+      --gold:     #c9a96e;
+      --white:    #ffffff;
+      --ink:      #2c3e50;
+      --scripth:   'Ms Madi', cursive;
+      --script:   'Great Vibes', cursive;
+      --serif:    'Cormorant Garamond', serif;
+      --sans:     'Jost', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--serif);
+      overflow-x: hidden;
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ─── HERO ─────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      background: var(--blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 60px 32px 80px;
+    }
+
+    /* Floral SVG clusters */
+    .floral-tl {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 160px;
+      opacity: 0.95;
+      pointer-events: none;
+    }
+    .floral-br {
+      position: absolute;
+      bottom: -10px;
+      right: -10px;
+      width: 180px;
+      opacity: 0.85;
+      pointer-events: none;
+      transform: rotate(180deg) scaleX(-1);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-style: oblique;
+      font-size: 0.9rem;
+      letter-spacing: 0.35em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-formal {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-style: oblique;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-names {
+      font-family: var(--scripth);
+      font-size: clamp(3.6rem, 14vw, 5rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero-ampersand {
+      display: block;
+      font-size: 0.55em;
+      opacity: 0.8;
+      margin: -6px 0;
+    }
+
+    .hero-monogram {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 54px;
+      height: 54px;
+      border: 1.7px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .hero-monogram svg { width: 32px; height: 32px; }
+
+    .hero-date {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.8);
+      text-transform: uppercase;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      z-index: 2;
+      animation: bob 2.2s ease-in-out infinite;
+    }
+    .scroll-cue span {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+    }
+    .scroll-cue svg { opacity: 0.6; }
+
+    /* ─── VERSE ────────────────────────────────────────────── */
+    .verse-section {
+      background: var(--white);
+      padding: 56px 32px;
+      text-align: center;
+      position: relative;
+    }
+    .verse-section::before,
+    .verse-section::after {
+      content: '';
+      display: block;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin-bottom: 40px;
+    }
+    .verse-section::after { margin-top: 40px; margin-bottom: 0; }
+
+    .verse-text {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--blue-deep);
+      max-width: 340px;
+      margin: 0 auto 16px;
+    }
+    .verse-ref {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* ─── COUPLE ───────────────────────────────────────────── */
+    .couple-section {
+      /* subtle card-like background with rounded corners */
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+      padding: 36px 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(46,79,110,0.06);
+      border: 1px solid rgba(46,79,110,0.04);
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .couple-card {
+      background: var(--white);
+      border-radius: 2px;
+      padding: 36px 24px;
+      margin-bottom: 20px;
+      position: relative;
+      box-shadow: 0 2px 20px rgba(143,167,192,0.12);
+      border-top: 2px solid var(--gold);
+      text-align: center;
+    }
+
+    .couple-role {
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 10px;
+    }
+
+    .couple-name {
+      font-family: var(--script);
+      font-size: 2.8rem;
+      color: var(--blue-deep);
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .couple-qual {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 200;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .couple-title {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #7a8f9e;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .couple-parents-label {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 6px;
+    }
+
+    .couple-parents {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--blue-deep);
+      line-height: 1.6;
+    }
+
+    .ampersand-divider {
+      text-align: center;
+      font-family: var(--script);
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin: 4px 0;
+      line-height: 1;
+    }
+
+    /* ─── INVITATION LINE ──────────────────────────────────── */
+    .invite-section {
+      background: var(--blue);
+      padding: 48px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .invite-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='100' cy='100' r='80' fill='none' stroke='white' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E") center/300px repeat;
+    }
+    .invite-host {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .invite-host strong { display: block; font-weight: 400; letter-spacing: 0.05em; }
+
+    .invite-body {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* ─── EVENTS ───────────────────────────────────────────── */
+    .events-section {
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+      padding: 36px 24px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(46,79,110,0.06);
+      border: 1px solid rgba(46,79,110,0.04);
+      /* background: var(--cream);
+      padding: 56px 28px; */
+    }
+
+    .event-card {
+      background: var(--white);
+      border-radius: 2px;
+      padding: 32px 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 20px rgba(143,167,192,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold);
+    }
+
+    .event-type {
+      font-family: var(--sans);
+      font-size: 0.58rem;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 12px;
+    }
+
+    .event-name {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--blue-deep);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .event-location {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: #7a8f9e;
+      margin-bottom: 20px;
+    }
+
+    .event-datetime {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .event-day-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--blue-deep);
+      line-height: 1;
+    }
+
+    .event-day-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-weekday {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+    }
+
+    .event-month-year {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--blue-deep);
+    }
+
+    .event-time {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+    }
+
+    .event-map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 1px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+    .event-map-btn:active { transform: scale(0.97); background: var(--blue-mid); }
+    .event-map-btn svg { flex-shrink: 0; }
+
+    /* QR section inside event */
+    .qr-row {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #eef0f3;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .qr-box {
+      width: 64px;
+      height: 64px;
+      background: #f0f3f6;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .qr-box img { width: 56px; height: 56px; object-fit: contain; border-radius: 2px; }
+
+    .qr-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 6px;
+    }
+    .qr-hint {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.8rem;
+      color: #9aa8b4;
+    }
+
+    /* ─── COMPLIMENTS ──────────────────────────────────────── */
+    .compliments-section {
+      background: var(--white);
+      padding: 48px 28px;
+      text-align: center;
+    }
+
+    .comp-label {
+      font-family: var(--sans);
+      font-size: 0.6rem;
+      font-weight: 300;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--blue-mid);
+      margin-bottom: 20px;
+    }
+
+    .comp-name {
+      font-family: var(--script);
+      font-size: 2rem;
+      color: var(--blue-deep);
+      margin-bottom: 6px;
+    }
+
+    .comp-org {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+      line-height: 2;
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────── */
+    .footer {
+      background: var(--blue-deep);
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .footer-monogram {
+      font-family: var(--script);
+      font-size: 2.8rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 12px;
+    }
+
+    .footer-date {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.35em;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+    }
+
+    /* ─── ANIMATIONS ───────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══════════════════════════════════════════════ -->
+  <section class="hero">
+
+    <img src="assets/Flowers.png" alt="" class="floral-tl" height="300" width="10" />
+    <img src="assets/FlowersFlipped.png" alt="" class="floral-br" height="320" width="64"/>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">You are cordially invited to celebrate</p>
+      <div class="hero-names">
+        Mike
+        <span class="hero-ampersand">&</span>
+        Madhu
+      </div>
+      <br>
+      <!-- <p class="hero-date">DATE</p> -->
+      <p class="hero-date">05 · 07 · 2026</p>
+      <br>
+      <br>
+      <p class="hero-formal">- FORMAL INVITATION TO FOLLOW -</p>
+      <!-- <div class="hero-monogram">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <img src="assets/MM.png" alt="MM" width="70" height="65" />
+        </svg>
+      </div> -->
+      
+    </div>
+
+    <div class="scroll-cue">
+      <span>Scroll</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 3v10M3 9l5 5 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══ VERSE ════════════════════════════════════════════════ -->
+  <section class="verse-section reveal">
+    <p class="verse-text">
+      "So they are no longer two, but one. Therefore what God has joined together, let man not separate."
+    </p>
+    <p class="verse-ref">Matthew 19 : 6</p>
+  </section>
+<br>
+  <!-- ═══ COUPLE ═══════════════════════════════════════════════ -->
+  <section class="couple-section">
+    <p class="section-label reveal">The Couple</p>
+
+    <!-- Groom -->
+    <div class="couple-card reveal">
+      <p class="couple-role">Groom</p>
+      <p class="couple-name">Mike Sherwin <span class="couple-qual">B.Arch</span></p>
+      <p class="couple-title">Principal Architect,<br>SERA Associates</p>
+      <p class="couple-parents-label">Son of</p>
+      <p class="couple-parents">
+        Mr. Melchoir Elango Rajan<br>
+        &amp; Mrs. Selvi Rajan
+      </p>
+      <br>
+      <p class="couple-role">Bride</p>
+          <p class="couple-name">Madhumetha <span class="couple-qual">MBA</span></p>
+          <p class="couple-parents-label" style="margin-top: 6px;">Daughter of</p>
+      <p class="couple-parents">
+        Mr. S. Karthikeyan<br>
+        &amp; Mrs. Niranjana Karthikeyan
+      </p>
+    </div>
+
+    <!-- <div class="ampersand-divider reveal">&</div> -->
+
+    <!-- Bride -->
+    <!-- <div class="couple-card reveal">
+      <p class="couple-role">Bride</p>
+      <p class="couple-name">Madhumetha</p>
+      <p class="couple-qual">MBA</p>
+      <p class="couple-parents-label" style="margin-top: 6px;">Daughter of</p>
+      <p class="couple-parents">
+        Mr. S. Karthikeyan<br>
+        &amp; Mrs. Niranjana Karthikeyan
+      </p>
+    </div> -->
+  </section>
+<br>
+  <!-- ═══ INVITATION BODY ════════════════════════════════════ -->
+  <section class="invite-section reveal">
+    <p class="invite-host">
+      <strong>Mr. Melchoir Elango Rajan &amp; Mrs. Selvi Rajan</strong>
+    </p>
+    <p class="invite-body">
+      Cordially invite and solicit your esteemed presence<br>
+      with family to bless the couple on the auspicious<br>
+      occasion of the marriage of their beloved son.
+    </p>
+  </section>
+  <br>
+
+  <!-- ═══ EVENTS ══════════════════════════════════════════════ -->
+  <section class="events-section">
+    <p class="section-label reveal">Events</p>
+
+    <!-- Wedding Ceremony -->
+    <div class="event-card reveal">
+      <p class="event-name">Wedding Ceremony</p>
+      <p class="event-location">Sacred Heart Cathedral, Thoothukudi</p>
+
+      <div class="event-datetime">
+        <span class="event-day-num">05</span>
+        <div class="event-day-meta">
+          <span class="event-weekday">Sunday</span>
+          <span class="event-month-year">July · 2026</span>
+        </div>
+      </div>
+      <!-- <p class="event-time">12 : 00 PM</p> -->
+
+      <div class="qr-row">
+        <div class="qr-box">
+          <!-- QR placeholder — replace src with actual QR image -->
+          <img src="assets/church.png" alt="Church QR Code" />
+        </div>
+        <div>
+          <p class="qr-label">Church Location</p>
+          <p class="qr-hint">Sacred Hearts Cathedral</p>
+          <p class="event-time">10 : 00 AM</p>
+          <a id="church-qr-link" href="#" target="_blank" rel="noopener" class="event-map-btn" style="margin-top:10px; display:inline-flex;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2C5.79 2 4 3.79 4 6c0 3.31 4 8 4 8s4-4.69 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3z" fill="white"/>
+            </svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+      <div class="qr-row">
+        <div class="qr-box">
+          <img src="assets/hall.png" alt="Reception QR Code" />
+        </div>
+        <div>
+          <p class="qr-label">Reception Location</p>
+          <p class="qr-hint">Sree Arunachalam Manickavel Mahal</p>
+          <p class="event-time">12 : 00 PM</p>
+          <a id="reception-qr-link" href="#" target="_blank" rel="noopener" class="event-map-btn" style="margin-top:10px; display:inline-flex; background:#c9a96e;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2C5.79 2 4 3.79 4 6c0 3.31 4 8 4 8s4-4.69 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3z" fill="white"/>
+            </svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Reception -->
+    <!-- <div class="event-card reveal">
+      <p class="event-type">Celebration</p>
+      <p class="event-name">Wedding Reception</p>
+      <p class="event-location">Sri Arunachalam Manickavel Mahal</p>
+
+      <div class="event-datetime">
+        <span class="event-day-num">05</span>
+        <div class="event-day-meta">
+          <span class="event-weekday">Sunday</span>
+          <span class="event-month-year">July · 2026</span>
+        </div>
+      </div>
+      <p class="event-time">Followed by Reception</p>
+
+      <div class="qr-row">
+        <div class="qr-box">
+          <img src="assets/reception.png" alt="Reception QR Code" />
+        </div>
+            <rect x="6"  y="32" width="10" height="10" rx="0.5" fill="#c9a96e"/>
+            <rect x="30" y="28" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="36" y="28" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="30" y="34" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="36" y="34" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="30" y="40" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="36" y="40" width="4"  height="4"  fill="#c9a96e"/>
+          </svg>
+        </div>
+        <div>
+          <p class="qr-label">Reception Location</p>
+          <p class="qr-hint">Sree Arunachalam Manickavel Mahal</p>
+          <p class="event-time">12 : 00 PM</p>
+          <a id="reception-qr-link" href="#" target="_blank" rel="noopener" class="event-map-btn" style="margin-top:10px; display:inline-flex; background:#c9a96e;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2C5.79 2 4 3.79 4 6c0 3.31 4 8 4 8s4-4.69 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3z" fill="white"/>
+            </svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Reception -->
+    <!-- <div class="event-card reveal">
+      <p class="event-type">Celebration</p>
+      <p class="event-name">Wedding Reception</p>
+      <p class="event-location">Sri Arunachalam Manickavel Mahal</p>
+
+      <div class="event-datetime">
+        <span class="event-day-num">05</span>
+        <div class="event-day-meta">
+          <span class="event-weekday">Sunday</span>
+          <span class="event-month-year">July · 2026</span>
+        </div>
+      </div>
+      <p class="event-time">Followed by Reception</p>
+
+      <div class="qr-row">
+        <div class="qr-box">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <rect x="2"  y="2"  width="18" height="18" rx="1" stroke="#c9a96e" stroke-width="2" fill="none"/>
+            <rect x="28" y="2"  width="18" height="18" rx="1" stroke="#c9a96e" stroke-width="2" fill="none"/>
+            <rect x="2"  y="28" width="18" height="18" rx="1" stroke="#c9a96e" stroke-width="2" fill="none"/>
+            <rect x="6"  y="6"  width="10" height="10" rx="0.5" fill="#c9a96e"/>
+            <rect x="32" y="6"  width="10" height="10" rx="0.5" fill="#c9a96e"/>
+            <rect x="6"  y="32" width="10" height="10" rx="0.5" fill="#c9a96e"/>
+            <rect x="30" y="28" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="36" y="28" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="30" y="34" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="36" y="34" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="30" y="40" width="4"  height="4"  fill="#c9a96e"/>
+            <rect x="36" y="40" width="4"  height="4"  fill="#c9a96e"/>
+          </svg>
+        </div>
+        <div>
+          <p class="qr-label">Reception Location</p>
+          <p class="qr-hint">Scan to navigate</p>
+          <a id="reception-qr-link" href="#" target="_blank" rel="noopener" class="event-map-btn" style="margin-top:10px; display:inline-flex; background:#c9a96e;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2C5.79 2 4 3.79 4 6c0 3.31 4 8 4 8s4-4.69 4-8c0-2.21-1.79-4-4-4zm0 5.5A1.5 1.5 0 1 1 8 4a1.5 1.5 0 0 1 0 3z" fill="white"/>
+            </svg>
+            Get Directions
+          </a>
+        </div>
+      </div>
+    </div> -->
+  </section>
+  <br>
+
+  <!-- ═══ COMPLIMENTS ══════════════════════════════════════════ -->
+  <section class="compliments-section reveal">
+    <p class="comp-label">Best Compliments From</p>
+    <p class="comp-name">Emmanuel Jone</p>
+    <p class="comp-org">
+      SERA Associates, Thoothukudi<br>
+      Designers &amp; Builders
+    </p>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <!-- <div class="footer-monogram">M &amp; M</div> -->
+     <img src="assets/MM.png" alt="MM" width="80" height="80" style="margin-bottom:12px; opacity:0.9;" />
+    <p class="footer-date">05 · 07 · 2026 &nbsp;·&nbsp; Thoothukudi</p>
+  </footer>
+
+  <script>
+    // ─── Intersection Observer for scroll reveals ───────────
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+
+    // ─── QR link placeholders ───────────────────────────────
+    // Replace these URLs with actual QR code destination URLs
+    // (paste the URL each QR code points to here)
+    const CHURCH_URL    = 'https://maps.google.com/?q=Sacred+Heart+Cathedral+Thoothukudi';
+    const RECEPTION_URL = 'https://maps.google.com/?q=Sri+Arunachalam+Manickavel+Mahal+Thoothukudi';
+
+    document.getElementById('church-qr-link').href    = CHURCH_URL;
+    document.getElementById('reception-qr-link').href = RECEPTION_URL;
+  </script>
+</body>
+</html>
